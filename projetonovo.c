@@ -12,23 +12,24 @@ typedef struct
 	int numero;
 	int cep;
 	char bairro[30];
-}tEndc;
+	char cidade[30];
+}tEnd;
 
 typedef struct
 {
-  char tipo[30];
-	int pc;
-	int pa;
+  int tipo;//1 para alugar, 2 para vender, 3 para os dois
+	int pc;// preço para comprar
+	int pa;// preço para vender
 }tVend;
 
 typedef struct
 {
 	int pavimento;
 	int quartos;
-	float areat;
-	float areac;
+	float areat;// area terreno
+	float areac;// area construida
 	tEnd e;//e = endereço
-
+	tVend v;//v = venda
 }tCasa;
 
 typedef struct
@@ -39,13 +40,15 @@ typedef struct
 	float cond;
 	float vagas;
   tEnd e;
-}tAp;
+	tVenda v;
+}tAp;//apartamentos
 
 typedef struct
 {
 	float area;
-	tEndc e;
-}tTer;
+	tEnd e;
+	tVenda v;
+}tTer;//terrenos
 
 tTer terreno[100];
 
@@ -71,6 +74,11 @@ int Cadcasa()
 
 	return n;
 }
+
+
+
+
+
 int main()
 {
 
