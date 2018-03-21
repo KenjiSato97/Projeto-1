@@ -17,9 +17,8 @@ typedef struct
 
 typedef struct
 {
-  int tipo;//1 para alugar, 2 para vender, 3 para os dois
-	int pc;// preço para comprar
-	int pa;// preço para vender
+  int tipo;//Vender ou Alugar
+	int p;// preço
 }tVend;
 
 typedef struct
@@ -50,21 +49,125 @@ typedef struct
 	tVenda v;
 }tTer;//terrenos
 
-tTer terreno[100];
-
 tCasa casa[100];
 
 tAp ap[100];
 
+tTer terreno[100];
 
-int Cadcasa()
+	printf("1-cadastrar\n");
+	printf("2-consultar imoveis\n");
+	printf("3-SAIR\n");
+	printf("\n Qual opcao voce deseja acessar? ");
+	scanf("%d",&opcao);
+
+		switch(opcao){
+		case1:
+			printf("1-cadastrar casa\n");
+			printf("2-cadastrar apartamento\n");
+			printf("3-cadastrar terreno\n");
+			scanf("%d",&imovel);
+			
+			switch(imovel){
+				case1:
+					int CadCasa()
+						{
+							int n,i;
+							printf("quantas casas deseja cadastrar?");
+							scanf("%d", &n);
+
+							for(i=0;i<=n&&i<=99;i++){
+								printf("\n Quantidade de pavimentos: ");
+								scanf("%[^\n]s",casa[i].pavimento);
+								printf("\n Quantidade de quartos: ");
+								scanf("%[^\n]s",casa[i].quartos);
+								printf("\n Area do terreno: ");
+								scanf("%[^\n]s",casa[i].areat);
+								printf("\n Area construida: ");
+								scanf("%[^\n]s",casa[i].areac);
+								printf("\n Rua: ");
+								scanf("%[^\n]s",casa[i].e.rua);
+								printf("\n Numero: ");
+								scanf("%[^\n]s",casa[i].e.numero);
+								printf("\n CEP: ");
+								scanf("%[^\n]s",casa[i].e.cep);
+								printf("\n Bairro: ");
+								scanf("%[^\n]s",casa[i].e.bairro);
+								printf("\n Cideade: ");
+								scanf("%[^\n]s",casa[i].e.cidade);
+								printf("\n Vender ou Alugar: ");
+								scanf("%[^\n]s",casa[i].v.tipo);
+								printf("\n Preco: ");
+								scanf("%[^\n]s",casa[i].v.p);
+								system("pause");
+						}
+						break;
+						}
+						case2:
+							int CadAp()
+						{
+							int n,i;
+							printf("quantos apartamentos deseja cadastrar?");
+							scanf("%d", &n);
+
+							for(i=0;i<=n&&i<=99;i++){
+								printf("\n Area do Apartamento: ");
+								scanf("%[^\n]s",Ap[i].area);
+								printf("\n Quantidade de quartos: ");
+								scanf("%[^\n]s",Ap[i].quartos);
+								printf("\n Nascente Sul ou Norte: ");
+								scanf("%[^\n]s",Ap[i].posi);
+								printf("\n Valor do condominio: ");
+								scanf("%[^\n]s",Ap[i].cond);
+								printf("\n Vagas de garagem: ");
+								scanf("%[^\n]s",Ap[i].vagas);
+								printf("\n Rua: ");
+								scanf("%[^\n]s",Ap[i].e.rua);
+								printf("\n Numero: ");
+								scanf("%[^\n]s",Ap[i].e.numero);
+								printf("\n CEP: ");
+								scanf("%[^\n]s",Ap[i].e.cep);
+								printf("\n Bairro: ");
+								scanf("%[^\n]s",Ap[i].e.bairro);
+								printf("\n Cideade: ");
+								scanf("%[^\n]s",Ap[i].e.cidade);
+								printf("\n Vender ou Alugar: ");
+								scanf("%[^\n]s",Ap[i].v.tipo);
+								printf("\n Preco: ");
+								scanf("%[^\n]s",Ap[i].v.p);
+								system("pause");
+						}
+						break;
+						}
+						case3:
+							int CadAp()
+						{
+							int n,i;
+							printf("quantos terrenos deseja cadastrar?");
+							scanf("%d", &n);
+
+							for(i=0;i<=n&&i<=99;i++){
+								printf("\n Area: ");
+								scanf("%[^\n]s",terreno[i].area);
+								printf("\n Rua: ");
+								scanf("%[^\n]s",terreno[i].e.rua);
+								printf("\n Numero: ");
+								scanf("%[^\n]s",terreno[i].e.numero);
+								printf("\n CEP: ");
+								scanf("%[^\n]s",terreno[i].e.cep);
+								printf("\n Bairro: ");
+								scanf("%[^\n]s",terreno[i].e.bairro);
+								printf("\n Cideade: ");
+								scanf("%[^\n]s",terreno[i].e.cidade);
+								printf("\n Vender ou Alugar: ");
+								scanf("%[^\n]s",terreno[i].v.tipo);
+								printf("\n Preco: ");
+								scanf("%[^\n]s",terreno[i].v.p);
+								system("pause");
+						}
+						break;
+						}
 {
-	int n,i;
-	printf("quantas casas deseja cadastrar");
-	scanf("%d", &n);
-
-	for(i=0;i<=n&&i<=99;i++)
-	{
 
 
 	}
