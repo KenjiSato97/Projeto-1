@@ -20,6 +20,15 @@ typedef struct{
 }tVend;
 
 typedef struct{
+	char ar[2];
+	char net[2];
+	char tv[2];
+	char lavanderia[2];
+	char limpeza[2];
+	char recep[2];
+}tServico;	
+
+typedef struct{
 	int pavimento;
 	int quartos;
 	float areat;// area terreno
@@ -32,6 +41,7 @@ typedef struct{
 	float area;
 	int quartos;
 	int posi;
+	int andar;
 	float cond;
 	float vagas;
   tEnd e;
@@ -44,21 +54,44 @@ typedef struct{
 	tVenda v;
 }tTer;//terrenos
 
+typedef struct{
+	float area;
+	float cond;
+	tServico s;
+  tEnd e;
+	tVenda v;
+}tFlat;//Flat
+
+typedef struct{
+	float area;
+	float cond;
+	char piscina[2];
+	char sauna[2];
+	char ginastica[2];
+	tServico s;
+  tEnd e;
+	tVenda v;
+}tStudio;//Studio
+
 tCasa casa[100];
 tAp ap[100];
 tTer terreno[100];
+tFlat flat[100];
+tStudio studio[100];
 
 	printf("1-cadastrar\n");
 	printf("2-consultar imoveis\n");
 	printf("3-SAIR\n");
 	printf("\n Qual opcao voce deseja acessar? ");
 	scanf("%d",&opcao);
-
+void
 switch(opcao){
 	case 1:
 		printf("1-cadastrar casa\n");
 		printf("2-cadastrar apartamento\n");
 		printf("3-cadastrar terreno\n");
+		printf("4-cadastrar flat\n");
+		printf("5-cadastrar studio\n");
 		scanf("%d",&imovel);
 
 switch(imovel){
@@ -109,6 +142,8 @@ switch(imovel){
 				scanf("%[^\n]s",Ap[i].quartos);
 				printf("\n Nascente Sul ou Norte: ");
 				scanf("%[^\n]s",Ap[i].posi);
+				printf("\n Andar: ");
+				scanf("%[^\n]s",Ap[i].andar);
 				printf("\n Valor do condominio: ");
 				scanf("%[^\n]s",Ap[i].cond);
 				printf("\n Vagas de garagem: ");
@@ -121,7 +156,7 @@ switch(imovel){
 				scanf("%[^\n]s",Ap[i].e.cep);
 				printf("\n Bairro: ");
 				scanf("%[^\n]s",Ap[i].e.bairro);
-				printf("\n Cideade: ");
+				printf("\n Cidade: ");
 				scanf("%[^\n]s",Ap[i].e.cidade);
 				printf("\n Vender ou Alugar: ");
 				scanf("%[^\n]s",Ap[i].v.tipo);
@@ -148,7 +183,7 @@ switch(imovel){
 				scanf("%[^\n]s",terreno[i].e.cep);
 				printf("\n Bairro: ");
 				scanf("%[^\n]s",terreno[i].e.bairro);
-				printf("\n Cideade: ");
+				printf("\n Cidade: ");
 				scanf("%[^\n]s",terreno[i].e.cidade);
 				printf("\n Vender ou Alugar: ");
 				scanf("%[^\n]s",terreno[i].v.tipo);
