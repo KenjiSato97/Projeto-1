@@ -44,22 +44,22 @@ typedef struct{
 	int andar;
 	float cond;
 	float vagas;
-  tEnd e;
-	tVenda v;
+	tEnd e;
+	tVend v;
 }tAp;//apartamentos
 
 typedef struct{
 	float area;
 	tEnd e;
-	tVenda v;
+	tVend v;
 }tTer;//terrenos
 
 typedef struct{
 	float area;
 	float cond;
 	tServico s;
-  tEnd e;
-	tVenda v;
+	tEnd e;
+	tVend v;
 }tFlat;//Flat
 
 typedef struct{
@@ -69,8 +69,8 @@ typedef struct{
 	char sauna[2];
 	char ginastica[2];
 	tServico s;
-  tEnd e;
-	tVenda v;
+  	tEnd e;
+	tVend v;
 }tStudio;//Studio
 
 tCasa casa[100];
@@ -129,8 +129,7 @@ switch(imovel){
 			break;
 		}
 	case 2:
-		int CadAp()
-		{
+		int CadAp(){
 			int n,i;
 			printf("quantos apartamentos deseja cadastrar?");
 			scanf("%d", &n);
@@ -193,8 +192,92 @@ switch(imovel){
 		}
 		break;
 	}
-}
+	case 4:
+		int CadFlat(){
+			int n,i;
+			printf("quantos flat deseja cadastrar?");
+			scanf("%d", &n);
 
+			for(i=0;i<=n&&i<=99;i++){
+				printf("\n Area do Flat: ");
+				scanf("%[^\n]s",flat[i].area);
+				printf("\n Valor do condominio: ");
+				scanf("%[^\n]s",flat[i].cond);
+				printf("\n ar-condicionado [s/n]: ");
+				scanf("%[^\n]s",flat[i].s.ar);
+				printf("\n Internet [s/n]: ");
+				scanf("%[^\n]s",flat[i].s.net);
+				printf("\n tv a cabo [s/n]: ");
+				scanf("%[^\n]s",flat[i].s.tv);
+				printf("\n servico de lavanderia [s/n]: ");
+				scanf("%[^\n]s",flat[i].s.lavanderia);
+				printf("\n recepcao 24 hrs [s/n]: ");
+				scanf("%[^\n]s",flat[i].s.recep);
+				printf("\n Rua: ");
+				scanf("%[^\n]s",flat[i].e.rua);
+				printf("\n Numero: ");
+				scanf("%[^\n]s",flat[i].e.numero);
+				printf("\n CEP: ");
+				scanf("%[^\n]s",flat[i].e.cep);
+				printf("\n Bairro: ");
+				scanf("%[^\n]s",flat[i].e.bairro);
+				printf("\n Cidade: ");
+				scanf("%[^\n]s",flat[i].e.cidade);
+				printf("\n Vender ou Alugar: ");
+				scanf("%[^\n]s",flat[i].v.tipo);
+				printf("\n Preco: ");
+				scanf("%[^\n]s",flat[i].v.p);
+				system("pause");
+		}
+		break;
+	}
+	case 5:
+		int CadStudio(){
+			int n,i;
+				printf("quantos studios deseja cadastrar?");
+				scanf("%d", &n);
+
+				for(i=0;i<=n&&i<=99;i++){
+					printf("\n Area do Studio: ");
+					scanf("%[^\n]s",studio[i].area);
+					printf("\n Valor do condominio: ");
+					scanf("%[^\n]s",studio[i].cond);
+					printf("\n Piscina [s/n]: ");
+					scanf("%[^\n]s",studio[i].piscina);
+					printf("\n Sauna [s/n]: ");
+					scanf("%[^\n]s",studio[i].sauna);
+					printf("\n Sala de ginastica [s/n]: ");
+					scanf("%[^\n]s",studio[i].ginastica);
+					printf("\n ar-condicionado [s/n]: ");
+					scanf("%[^\n]s",studio[i].s.ar);
+					printf("\n Internet [s/n]: ");
+					scanf("%[^\n]s",studio[i].s.net);
+					printf("\n tv a cabo [s/n]: ");
+					scanf("%[^\n]s",studio[i].s.tv);
+					printf("\n servico de lavanderia [s/n]: ");
+					scanf("%[^\n]s",studio[i].s.lavanderia);
+					printf("\n recepcao 24 hrs [s/n]: ");
+					scanf("%[^\n]s",studio[i].s.recep);
+					printf("\n Rua: ");
+					scanf("%[^\n]s",studio[i].e.rua);
+					printf("\n Numero: ");
+					scanf("%[^\n]s",studio[i].e.numero);
+					printf("\n CEP: ");
+					scanf("%[^\n]s",studio[i].e.cep);
+					printf("\n Bairro: ");
+					scanf("%[^\n]s",studio[i].e.bairro);
+					printf("\n Cidade: ");
+					scanf("%[^\n]s",studio[i].e.cidade);
+					printf("\n Vender ou Alugar: ");
+					scanf("%[^\n]s",studio[i].v.tipo);
+					printf("\n Preco: ");
+					scanf("%[^\n]s",studio[i].v.p);
+					system("pause");
+		}
+		break;
+	}
+}
+}
 void ConsultIm(){
 	int consul, i;
 	printf("O que voce deseja consultar? 1-Terrenos 2-Casas 3-Apartamentos: ");
